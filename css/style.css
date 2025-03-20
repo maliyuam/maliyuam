@@ -230,6 +230,7 @@ img {
     font-weight: 500;
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
     background-size: 200% 200%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientText 2s ease infinite;
