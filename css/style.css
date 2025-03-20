@@ -1656,22 +1656,15 @@ img {
 }
 
 .research-viz-container {
-    display: flex;
-    flex-wrap: wrap; /* or nowrap, if you prefer a single row */
-    gap: 1.5rem;     /* spacing between cards */
-    justify-content: center;
-    align-items: flex-start; /* so top edges line up */
-    /* Remove or override any leftover styling that might cause absolute positioning */
-    position: static;
-    width: auto;
-    max-width: 100%;
-    margin: 0 auto;
+    display: flex;         /* Make this a flex container */
+    flex-wrap: wrap;       /* Allows wrapping on smaller screens */
+    gap: 1.5rem;           /* Space between cards */
+    justify-content: center; /* Centers them horizontally */
+    align-items: flex-start;  /* Aligns them by their top edge */
+    max-width: 1200px;     /* Example container width */
+    margin: 0 auto;        /* Center the container itself */
   }
-  
-
-.research-viz-center {
-    display: none;
-}
+    
 
 .center-icon {
     width: 80px;
@@ -1698,29 +1691,23 @@ img {
     animation: pulse 2s infinite;
 }
 
-.research-viz-node {
-    position: static; /* no absolute positioning */
-    flex: 0 0 300px;   /* each card ~300px wide, for example */
-    box-sizing: border-box;
-  }  
-
-.node-1 {
-    top: 10%;
-    left: 15%;
-    transform: translateX(-50%);
-}
-
-.node-2 {
-    top: 70%;
-    left: 25%;
-    transform: translateX(-50%);
-}
-
+.research-viz-node,
+.node-1,
+.node-2,
 .node-3 {
-    top: 40%;
-    right: 5%;
-    transform: translateX(50%);
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  
+    /* Let them size flexibly */
+    flex: 0 0 calc(33.33% - 1.5rem);
+    box-sizing: border-box;
+    min-width: 250px;  /* They won’t shrink below 250px */
+    max-width: 400px;  /* They also won’t grow beyond 400px */
+    margin: 0 auto;
 }
+
 
 .node-icon {
     width: 60px;
@@ -1754,10 +1741,6 @@ img {
     opacity: 0;
     transform: translateY(10px);
     transition: all var(--transition-base);
-}
-
-.node-connector {
-    display: none;
 }
 
 /* Node 1 connector */
