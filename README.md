@@ -1,6 +1,6 @@
 # Muhammad Aliyu - Personal Portfolio Website
 
-## 🌟 Overview
+## Overview
 
 This is a comprehensive personal portfolio website showcasing Muhammad Aliyu's professional journey, research, projects, and expertise in AI Governance, Entrepreneurship, and Technology Innovation. The website is designed to be responsive, interactive, and provide an engaging user experience that highlights Muhammad's professional achievements and research contributions.
 
@@ -92,7 +92,7 @@ Customize colors by modifying CSS variables in `style.css`:
 }
 ```
 
-## 🌈 Sections
+## Sections
 
 - **Home**: Introduction and typewriter effect
 - **About**: Personal background and highlights
