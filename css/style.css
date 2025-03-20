@@ -1656,17 +1656,21 @@ img {
 }
 
 .research-viz-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
+    display: flex;
+    flex-wrap: wrap; /* or nowrap, if you prefer a single row */
+    gap: 1.5rem;     /* spacing between cards */
+    justify-content: center;
+    align-items: flex-start; /* so top edges line up */
+    /* Remove or override any leftover styling that might cause absolute positioning */
+    position: static;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
 
 .research-viz-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: var(--z-above);
+    display: none;
 }
 
 .center-icon {
@@ -1695,21 +1699,10 @@ img {
 }
 
 .research-viz-node {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.research-viz-node.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.node-connector {
-    width: 0;
-    opacity: 0;
-    transition: width 0.5s ease, opacity 0.5s ease;
-}
+    position: static; /* no absolute positioning */
+    flex: 0 0 300px;   /* each card ~300px wide, for example */
+    box-sizing: border-box;
+  }  
 
 .node-1 {
     top: 10%;
@@ -1764,16 +1757,7 @@ img {
 }
 
 .node-connector {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-    transform-origin: left center;
-    z-index: var(--z-below);
-    opacity: 0;
-    transition: all 1s ease;
+    display: none;
 }
 
 /* Node 1 connector */
@@ -1907,12 +1891,7 @@ img {
     }
     
     .research-viz-center {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-        margin: 0 auto 3rem;
-        width: 80px;
+        display: none;
     }
     
     .research-viz-node {
